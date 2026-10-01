@@ -17,8 +17,9 @@ int main(void)
 
     printf("== Insertion ==\n");
     for (int i = 1; i <= 5; i++) liste = liste_inserer(liste, i * 10);
+    liste = liste_inserer_fin(liste, 5);
     liste_afficher(liste);
-    verifier("longueur = 5", liste_longueur(liste) == 5);
+    verifier("longueur = 6", liste_longueur(liste) == 6);
     verifier("contient 30", liste_contient(liste, 30));
     verifier("ne contient pas 99", !liste_contient(liste, 99));
 

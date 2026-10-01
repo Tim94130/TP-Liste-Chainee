@@ -10,6 +10,7 @@ typedef struct Maillon {
 
 /* Insertion : renvoie la nouvelle tete */
 Maillon *liste_inserer(Maillon *tete, int valeur);       /* en tete */
+Maillon *liste_inserer_fin(Maillon *tete, int valeur);   /* en queue */
 
 /* Consultation */
 int  liste_longueur(const Maillon *tete);

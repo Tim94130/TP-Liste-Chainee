@@ -25,6 +25,17 @@ Maillon *liste_inserer(Maillon *tete, int valeur)
     return creer_maillon(valeur, tete);
 }
 
+Maillon *liste_inserer_fin(Maillon *tete, int valeur)
+{
+    Maillon *nouveau = creer_maillon(valeur, NULL);
+    if (tete == NULL) return nouveau;
+
+    Maillon *m = tete;
+    while (m->suivant != NULL) m = m->suivant;
+    m->suivant = nouveau;
+    return tete;
+}
+
 int liste_longueur(const Maillon *tete)
 {
     int n = 0;
