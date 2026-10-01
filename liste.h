@@ -21,6 +21,8 @@ Maillon *liste_inverser(Maillon *tete);
 /* Consultation */
 int  liste_longueur(const Maillon *tete);
 bool liste_contient(const Maillon *tete, int valeur);
+long liste_somme(const Maillon *tete);
+bool liste_minimum(const Maillon *tete, int *resultat);  /* false si liste vide */
 bool liste_maximum(const Maillon *tete, int *resultat);  /* false si liste vide */
 
 void liste_afficher(const Maillon *tete);

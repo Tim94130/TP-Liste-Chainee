@@ -77,6 +77,26 @@ bool liste_contient(const Maillon *tete, int valeur)
     return false;
 }
 
+long liste_somme(const Maillon *tete)
+{
+    long somme = 0;
+    for (const Maillon *m = tete; m != NULL; m = m->suivant)
+        somme += m->valeur;
+    return somme;
+}
+
+bool liste_minimum(const Maillon *tete, int *resultat)
+{
+    if (tete == NULL) return false;
+
+    int min = tete->valeur;
+    for (const Maillon *m = tete->suivant; m != NULL; m = m->suivant)
+        if (m->valeur < min) min = m->valeur;
+
+    *resultat = min;
+    return true;
+}
+
 bool liste_maximum(const Maillon *tete, int *resultat)
 {
     if (tete == NULL) return false;

@@ -24,7 +24,10 @@ int main(void)
     verifier("ne contient pas 99", !liste_contient(liste, 99));
 
     printf("== Statistiques ==\n");
+    verifier("somme = 155", liste_somme(liste) == 155);
+    verifier("minimum = 5", liste_minimum(liste, &val) && val == 5);
     verifier("maximum = 50", liste_maximum(liste, &val) && val == 50);
+    verifier("minimum d'une liste vide = false", !liste_minimum(NULL, &val));
 
     printf("== Suppression ==\n");
     liste = liste_supprimer(liste, 50);   /* la tete */
