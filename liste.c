@@ -51,6 +51,18 @@ Maillon *liste_supprimer(Maillon *tete, int valeur)
     return tete;
 }
 
+Maillon *liste_inverser(Maillon *tete)
+{
+    Maillon *inverse = NULL;
+    while (tete != NULL) {
+        Maillon *suiv = tete->suivant;
+        tete->suivant = inverse;
+        inverse = tete;
+        tete = suiv;
+    }
+    return inverse;
+}
+
 int liste_longueur(const Maillon *tete)
 {
     int n = 0;

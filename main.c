@@ -34,6 +34,11 @@ int main(void)
     verifier("longueur = 4", liste_longueur(liste) == 4);
     verifier("50 supprime", !liste_contient(liste, 50));
 
+    printf("== Inversion ==\n");
+    liste = liste_inverser(liste);
+    liste_afficher(liste);
+    verifier("nouvelle tete = 10", liste->valeur == 10);
+
     printf("== Liberation ==\n");
     liste_liberer(liste);
     verifier("aucune fuite memoire", liste_blocs_en_circulation() == 0);
