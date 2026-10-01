@@ -8,7 +8,10 @@ demo: $(OBJ)
 %.o: %.c liste.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+run: demo
+	./demo
+
 clean:
 	rm -f $(OBJ) demo demo.exe
 
-.PHONY: clean
+.PHONY: run clean
