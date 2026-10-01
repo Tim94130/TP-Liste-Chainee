@@ -36,6 +36,21 @@ Maillon *liste_inserer_fin(Maillon *tete, int valeur)
     return tete;
 }
 
+Maillon *liste_supprimer(Maillon *tete, int valeur)
+{
+    Maillon *prec = NULL;
+    for (Maillon *m = tete; m != NULL; prec = m, m = m->suivant) {
+        if (m->valeur != valeur) continue;
+
+        if (prec == NULL) tete = m->suivant;   /* on supprime la tete */
+        else prec->suivant = m->suivant;
+        free(m);
+        blocs--;
+        break;
+    }
+    return tete;
+}
+
 int liste_longueur(const Maillon *tete)
 {
     int n = 0;

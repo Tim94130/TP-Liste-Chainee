@@ -12,6 +12,9 @@ typedef struct Maillon {
 Maillon *liste_inserer(Maillon *tete, int valeur);       /* en tete */
 Maillon *liste_inserer_fin(Maillon *tete, int valeur);   /* en queue */
 
+/* Suppression de la premiere occurrence de valeur : renvoie la nouvelle tete */
+Maillon *liste_supprimer(Maillon *tete, int valeur);
+
 /* Consultation */
 int  liste_longueur(const Maillon *tete);
 bool liste_contient(const Maillon *tete, int valeur);

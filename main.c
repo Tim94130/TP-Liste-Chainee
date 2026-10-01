@@ -26,6 +26,14 @@ int main(void)
     printf("== Statistiques ==\n");
     verifier("maximum = 50", liste_maximum(liste, &val) && val == 50);
 
+    printf("== Suppression ==\n");
+    liste = liste_supprimer(liste, 50);   /* la tete */
+    liste = liste_supprimer(liste, 5);    /* la queue */
+    liste = liste_supprimer(liste, 99);   /* absent : ne change rien */
+    liste_afficher(liste);
+    verifier("longueur = 4", liste_longueur(liste) == 4);
+    verifier("50 supprime", !liste_contient(liste, 50));
+
     printf("== Liberation ==\n");
     liste_liberer(liste);
     verifier("aucune fuite memoire", liste_blocs_en_circulation() == 0);
